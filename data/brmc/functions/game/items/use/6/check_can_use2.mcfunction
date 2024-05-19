@@ -1,0 +1,2 @@
+$execute store result score $check_item_type bendangs run data get storage bendangs:game ItemsTemp[$(Slot)]
+execute unless score $check_item_type bendangs matches 0 unless score $check_item_type bendangs matches 6 run scoreboard players set $can_steal bendangs 1

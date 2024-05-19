@@ -1,0 +1,10 @@
+# 加入旁观队
+team join watcher @s
+
+# 播放音效
+execute at @s run function brmc:lib/sounds/hit2
+
+# 替换物品
+clear @s gray_dye
+clear @s purple_dye
+item replace entity @s[tag=on_minecart] hotbar.8 with gray_dye{ready_item: 1b,display:{Name:'[{"text":"","color": "white","italic": false},{"text": "待机（按 "},{"keybind":"key.use"},{"text": " 切换准备）"}]'}} 1

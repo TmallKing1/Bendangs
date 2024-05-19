@@ -1,0 +1,1 @@
+data merge entity @e[tag=temporary_display,limit=1] {transformation:{right_rotation: {axis: [0.0f, 0.0f, 1.0f], angle: 2.355f},translation:[0.0f, 0.0f, 0.0f]},start_interpolation:0}

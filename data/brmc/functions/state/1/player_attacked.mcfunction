@@ -1,0 +1,1 @@
+function brmc:game/items/use/attack

@@ -1,0 +1,39 @@
+# 在 Bossbar 和 Tablist 上显示玩家生命值
+execute if score @e[tag=player_A,limit=1] life matches 1 run data modify storage bendangs:game LifeDisplay.A set value '{"text":"❤","color":"red"}'
+execute if score @e[tag=player_A,limit=1] life matches 2 run data modify storage bendangs:game LifeDisplay.A set value '{"text":"❤❤","color":"red"}'
+execute if score @e[tag=player_A,limit=1] life matches 3 run data modify storage bendangs:game LifeDisplay.A set value '{"text":"❤❤❤","color":"red"}'
+execute if score @e[tag=player_A,limit=1] life matches 4 run data modify storage bendangs:game LifeDisplay.A set value '{"text":"❤❤❤❤","color":"red"}'
+execute if score @e[tag=player_A,limit=1] life matches 5 run data modify storage bendangs:game LifeDisplay.A set value '{"text":"❤❤❤❤❤","color":"red"}'
+execute if entity @e[tag=player_A,limit=1,tag=dying] run data modify storage bendangs:game LifeDisplay.A set value '{"text":"濒死","color":"red","bold":true}'
+execute if score @e[tag=player_B,limit=1] life matches 1 run data modify storage bendangs:game LifeDisplay.B set value '{"text":"❤","color":"blue"}'
+execute if score @e[tag=player_B,limit=1] life matches 2 run data modify storage bendangs:game LifeDisplay.B set value '{"text":"❤❤","color":"blue"}'
+execute if score @e[tag=player_B,limit=1] life matches 3 run data modify storage bendangs:game LifeDisplay.B set value '{"text":"❤❤❤","color":"blue"}'
+execute if score @e[tag=player_B,limit=1] life matches 4 run data modify storage bendangs:game LifeDisplay.B set value '{"text":"❤❤❤❤","color":"blue"}'
+execute if score @e[tag=player_B,limit=1] life matches 5 run data modify storage bendangs:game LifeDisplay.B set value '{"text":"❤❤❤❤❤","color":"blue"}'
+execute if entity @e[tag=player_B,limit=1,tag=dying] run data modify storage bendangs:game LifeDisplay.B set value '{"text":"濒死","color":"blue","bold":true}'
+
+bossbar set bendangs:game_a color red
+bossbar set bendangs:game_b color blue
+
+execute if score $game_state bendangs matches 3 if entity @a[scores={minecart_id=1}] if entity @a[scores={minecart_id=2}] run bossbar set bendangs:game name ["",{"selector": "@a[scores={minecart_id=1}]","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"selector": "@a[scores={minecart_id=2}]","color": "blue"}]
+execute if score $game_state bendangs matches 3 unless entity @a[scores={minecart_id=1}] if entity @a[scores={minecart_id=2}] run bossbar set bendangs:game name ["",{"text": "暂时离场","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"selector": "@a[scores={minecart_id=2}]","color": "blue"}]
+execute if score $game_state bendangs matches 3 if entity @a[scores={minecart_id=1}] unless entity @a[scores={minecart_id=2}] run bossbar set bendangs:game name ["",{"selector": "@a[scores={minecart_id=1}]","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"text": "暂时离场","color": "blue"}]
+execute if score $game_state bendangs matches 3 unless entity @a[scores={minecart_id=1}] unless entity @a[scores={minecart_id=2}] run bossbar set bendangs:game name ["",{"text": "暂时离场","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"text": "暂时离场","color": "blue"}]
+
+execute if entity @a[scores={minecart_id=1}] if entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_a name ["",{"selector": "@a[scores={minecart_id=1}]","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"selector": "@a[scores={minecart_id=2}]","color": "blue"}]
+execute unless entity @a[scores={minecart_id=1}] if entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_a name ["",{"text": "暂时离场","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"selector": "@a[scores={minecart_id=2}]","color": "blue"}]
+execute if entity @a[scores={minecart_id=1}] unless entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_a name ["",{"selector": "@a[scores={minecart_id=1}]","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"text": "暂时离场","color": "blue"}]
+execute unless entity @a[scores={minecart_id=1}] unless entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_a name ["",{"text": "暂时离场","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"text": "暂时离场","color": "blue"}]
+execute if entity @a[scores={minecart_id=1}] if entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_b name ["",{"selector": "@a[scores={minecart_id=1}]","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"selector": "@a[scores={minecart_id=2}]","color": "blue"}]
+execute unless entity @a[scores={minecart_id=1}] if entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_b name ["",{"text": "暂时离场","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"selector": "@a[scores={minecart_id=2}]","color": "blue"}]
+execute if entity @a[scores={minecart_id=1}] unless entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_b name ["",{"selector": "@a[scores={minecart_id=1}]","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"text": "暂时离场","color": "blue"}]
+execute unless entity @a[scores={minecart_id=1}] unless entity @a[scores={minecart_id=2}] run bossbar set bendangs:game_b name ["",{"text": "暂时离场","color": "red"}," ",{"nbt":"LifeDisplay.A","storage": "bendangs:game","interpret": true},{"text": " : ","color": "white","bold": true},{"nbt":"LifeDisplay.B","storage": "bendangs:game","interpret": true}," ",{"text": "暂时离场","color": "blue"}]
+
+scoreboard players reset * life_display
+scoreboard players set @a[team=player] life_display 0
+scoreboard players operation @a[team=player,scores={minecart_id=1}] life_display = @e[tag=player_A,limit=1] life
+scoreboard players operation @a[team=player,scores={minecart_id=2}] life_display = @e[tag=player_B,limit=1] life
+scoreboard players operation @a[team=player,scores={minecart_id=1}] life_display *= #2 bendangs
+scoreboard players operation @a[team=player,scores={minecart_id=2}] life_display *= #2 bendangs
+execute if entity @e[tag=player_A,limit=1,tag=dying] run scoreboard players set @a[team=player,scores={minecart_id=1}] life_display 1
+execute if entity @e[tag=player_B,limit=1,tag=dying] run scoreboard players set @a[team=player,scores={minecart_id=2}] life_display 1

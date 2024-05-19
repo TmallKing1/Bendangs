@@ -1,0 +1,1 @@
+$data modify entity @e[tag=marked_display,limit=1] item set from block 4 5 3 Items[{tag:{ItemType:$(Type)}}]
