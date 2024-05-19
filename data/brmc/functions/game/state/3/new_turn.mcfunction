@@ -7,7 +7,7 @@ data modify entity @e[tag=crossbow_display,limit=1] item set value {Count:1b, id
 # 显示玩家生命值
 function brmc:game/life_display
 
-# 末影水晶
+# 末地水晶
 function brmc:game/state/3/crystal_index
 
 # 将弩转到朝向当前行动玩家的一边

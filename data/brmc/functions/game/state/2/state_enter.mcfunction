@@ -22,6 +22,7 @@ title @a subtitle ["本轮子弹 ",{"nbt":"BulletsDisplay","storage": "bendangs:
 function brmc:game/life_display
 bossbar set bendangs:game_a visible false
 bossbar set bendangs:game_b visible false
+bossbar set bendangs:game_watcher visible false
 bossbar set bendangs:game visible true
 bossbar set bendangs:game color yellow
 bossbar set bendangs:game name ["本轮子弹 ",{"nbt":"BulletsDisplay","storage": "bendangs:game","interpret": true}]
@@ -29,6 +30,11 @@ bossbar set bendangs:game max 40
 
 # 清空子弹显示
 function brmc:game/bullet_display_clear
+
+# 重置道具使用状态
+tag @e remove stealing
+tag @e remove paused
+scoreboard players set $enhanced bendangs 0
 
 # 音效
 execute as @a at @s run playsound block.note_block.pling player @s 0 1000000 0 1000000 2

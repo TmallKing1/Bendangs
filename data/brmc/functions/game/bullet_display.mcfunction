@@ -7,4 +7,4 @@ execute as @e[tag=bullet_display] if score @s minecart_id = $action_player benda
 execute as @e[tag=bullet_display] if score @s minecart_id = $action_player bendangs unless score $bullet_type bendangs matches 0..1 run data modify entity @s item set value {id: "minecraft:air", Count: 1b}
 execute as @e[tag=bullet_display] if score @s minecart_id = $action_player bendangs if score $bullet_type bendangs matches 0..1 run data modify entity @s Glowing set value 1b
 execute as @e[tag=bullet_display] if score @s minecart_id = $action_player bendangs if score $bullet_type bendangs matches 1 run data modify entity @s glow_color_override set value 16711680
-execute as @e[tag=bullet_display] if score @s minecart_id = $action_player bendangs unless score $bullet_type bendangs matches 1 run data remove entity @s glow_color_override
+execute as @e[tag=bullet_display] if score @s minecart_id = $action_player bendangs unless score $bullet_type bendangs matches 1 run data modify entity @s glow_color_override set value 16777215

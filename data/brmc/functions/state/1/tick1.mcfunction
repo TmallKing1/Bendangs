@@ -8,5 +8,7 @@ ride @a[team=player,scores={minecart_id=1},limit=1] mount @e[tag=player_seat_A,l
 ride @a[team=player,scores={minecart_id=2},limit=1] mount @e[tag=player_seat_B,limit=1]
 
 # 启用老板栏
+bossbar set bendangs:game players @a
 bossbar set bendangs:game_a players @a[scores={minecart_id=1}]
 bossbar set bendangs:game_b players @a[scores={minecart_id=2}]
+bossbar set bendangs:game_watcher players @a[team=watcher]

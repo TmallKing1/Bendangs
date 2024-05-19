@@ -16,6 +16,7 @@ tag @e remove lost
 function brmc:game/life_display
 bossbar set bendangs:game_a visible false
 bossbar set bendangs:game_b visible false
+bossbar set bendangs:game_watcher visible false
 bossbar set bendangs:game visible true
 bossbar set bendangs:game color yellow
 bossbar set bendangs:game name [{"text": "游戏结束","color": "yellow"}]

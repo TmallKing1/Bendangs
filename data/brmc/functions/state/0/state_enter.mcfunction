@@ -6,6 +6,10 @@ scoreboard players reset * minecart_id
 scoreboard players reset * display
 scoreboard players reset * player_score
 
+# 记分板显示
+scoreboard objectives setdisplay sidebar
+scoreboard objectives setdisplay list
+scoreboard objectives setdisplay below_name
 
 # Bossbar
 bossbar set bendangs:waiting visible true

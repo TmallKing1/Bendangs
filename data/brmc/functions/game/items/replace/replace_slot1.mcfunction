@@ -7,7 +7,7 @@
 # 6 - 失明药水：偷取对方道具一个并立即使用（不能偷失明药水）
 # 7 - 末影之眼：得知下发子弹的类型
 # 8 - 燧石：转换下发子弹类型为另一种
-# 9 - 末影水晶：得知队列内随机位置的子弹类型
+# 9 - 末地水晶：得知队列内随机位置的子弹类型
 
 # 获取玩家当前槽位的物品类型
 $execute store result score $item_type bendangs run data get storage bendangs:game ItemsTemp[$(Slot)]

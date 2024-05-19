@@ -1,4 +1,4 @@
-# 生成末影水晶显示的子弹索引
+# 生成末地水晶显示的子弹索引
 
 data modify storage bendangs:game Random.Min set value 0
 execute store result score $random_max bendangs run data get storage bendangs:game Bullets
