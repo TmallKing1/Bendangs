@@ -16,5 +16,8 @@ ride @s[team=player,scores={minecart_id=2}] mount @e[tag=player_seat_B,limit=1]
 # 清除物品
 clear @s
 
+# 解除状态效果
+effect clear @s
+
 # 状态效果
 function brmc:state/1/give_effects

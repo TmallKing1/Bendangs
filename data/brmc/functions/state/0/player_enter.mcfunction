@@ -13,5 +13,8 @@ clear @s
 # 传送
 tp @s -4.0 1.5 1.0 -90 0
 
+# 解除状态效果
+effect clear @s
+
 # 给予效果
 function brmc:state/0/give_effects
