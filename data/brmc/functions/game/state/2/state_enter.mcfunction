@@ -35,6 +35,7 @@ function brmc:game/bullet_display_clear
 tag @e remove stealing
 tag @e remove paused
 scoreboard players set $enhanced bendangs 0
+scoreboard players reset $item_using bendangs
 
 # 音效
 execute as @a at @s run playsound block.note_block.pling player @s 0 1000000 0 1000000 2

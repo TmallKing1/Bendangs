@@ -5,9 +5,6 @@ execute store result score @s UUID run data get entity @s UUID[0]
 execute on vehicle run kill
 ride @s dismount
 
-# 解除状态效果
-effect clear @s
-
 # 根据游戏状态执行不同方法
 execute if score $state bendangs matches 0 run function brmc:state/0/player_enter
 execute if score $state bendangs matches 1 run function brmc:state/1/player_enter

@@ -1,8 +1,13 @@
 # 确保初始的子弹队列是空的
 data modify storage bendangs:game Bullets set value []
 
-# 总子弹数（2-8）
-execute store result score $arrow_count bendangs run random value 2..8
+# 总子弹数（血量均小于等于2时：2-4，只有一名玩家小于等于2时：3-6，两名玩家血量均大于2时：4-8）
+scoreboard players set $bullet_count_control bendangs 0
+execute unless score @e[scores={minecart_id=1},tag=player_marker,limit=1] life matches ..2 run scoreboard players add $bullet_count_control bendangs 1
+execute unless score @e[scores={minecart_id=2},tag=player_marker,limit=1] life matches ..2 run scoreboard players add $bullet_count_control bendangs 1
+execute if score $bullet_count_control bendangs matches 0 store result score $arrow_count bendangs run random value 2..4
+execute if score $bullet_count_control bendangs matches 1 store result score $arrow_count bendangs run random value 3..6
+execute if score $bullet_count_control bendangs matches 2 store result score $arrow_count bendangs run random value 4..8
 
 # 计算实弹数目，虚弹即为总数减去实弹数目
 execute if score $arrow_count bendangs matches ..4 run scoreboard players set $random_min bendangs 1
