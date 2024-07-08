@@ -50,8 +50,8 @@ summon minecart 0.0 1.6 -1.5 {Invulnerable: 1b, Tags:["player_seat","player_seat
 summon minecart 0.0 1.6 3.5 {Invulnerable: 1b, Tags:["player_seat","player_seat_B"], NoGravity: 1b,Silent:1b}
 
 kill @e[type=interaction]
-summon interaction 0.0 2.4 -1.5 {Tags:["player_interaction","player_interaction_A"], response: 1b}
-summon interaction 0.0 2.4 3.5 {Tags:["player_interaction","player_interaction_B"], response: 1b}
+summon interaction 0.0 2.3 -1.5 {Tags:["player_interaction","player_interaction_A"], response: 1b}
+summon interaction 0.0 2.3 3.5 {Tags:["player_interaction","player_interaction_B"], response: 1b}
 
 kill @e[type=glow_item_frame]
 summon minecraft:glow_item_frame -8.97 2.50 5.50 {Invisible: 0b, ItemDropChance: 1.0f, Item: {id: "minecraft:arrow", tag: {display: {Name: '{"text":"无害箭","italic":false}'}}, Count: 1b}, ItemRotation: 0b, OnGround: 0b, Air: 300s, Invulnerable: 1b, FallDistance: 0.0f, Fixed: 1b, Motion: [0.0d, 0.0d, 0.0d], Rotation: [270.0f, 0.0f], Facing: 5b, TileZ: 5, Fire: -1s, PortalCooldown: 0, TileY: 2, TileX: -9}
