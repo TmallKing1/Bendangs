@@ -1,6 +1,6 @@
 
-execute unless entity @e[tag=player_seat_A] run summon minecart 0.0 1.6 -1.5 {Invulnerable: 1b, Tags:["player_seat","player_seat_A"], NoGravity: 1b,Silent:1b}
-execute unless entity @e[tag=player_seat_B] run summon minecart 0.0 1.6 3.5 {Invulnerable: 1b, Tags:["player_seat","player_seat_B"], NoGravity: 1b,Silent:1b}
+execute unless entity @e[tag=player_seat_A] run summon minecart 0.0 1.5 -1.5 {Invulnerable: 1b, Tags:["player_seat","player_seat_A"], NoGravity: 1b,Silent:1b}
+execute unless entity @e[tag=player_seat_B] run summon minecart 0.0 1.5 3.5 {Invulnerable: 1b, Tags:["player_seat","player_seat_B"], NoGravity: 1b,Silent:1b}
 
 # 不同状态执行不同函数
 execute if score $state bendangs matches 0 run function brmc:state/0/tick1
